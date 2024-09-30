@@ -13,6 +13,8 @@ def video(req: HttpRequest) -> HttpResponse:
     context = {'videos': videos}
     return render(req, "videos/video.html", context)
 
+
+# Функция которая обрабатывает и отправляет комментарии
 def video_page(request, video_id):
     video = get_object_or_404(models.Video, id=video_id)
     comments = video.comments.all()

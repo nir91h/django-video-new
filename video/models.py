@@ -11,7 +11,7 @@ class Video(models.Model):
     def __str__(self):
         return str(self.id) + " - " + self.title
 
-
+# модель коммента
 class Comment(models.Model):
     video = models.ForeignKey(Video, related_name='comments', on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
