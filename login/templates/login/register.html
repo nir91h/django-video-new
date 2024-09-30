@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %} VideoOpka - Регистрация {% endblock title %}
+
+{% block content %}
+    <h1>Регистрация</h1>
+    <div>
+        <form method="POST" action="/register/" novalidate>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block title %} VideoOpka - Авторизация {% endblock title %}
+
+{% block content %}
+    <form action="/login/" method="post">
+        <h1>Авторизация</h1>
+        {% csrf_token %}
+        <input name="username" type="text" placeholder="Введите имя пользователя">
+        <input name="password" type="text" placeholder="Введите пароль ">
+        <button type="submit">Авторизоваться</button>
+    </form>
+{% endblock %}

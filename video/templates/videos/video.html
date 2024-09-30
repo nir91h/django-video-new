@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %} VideoOpka - Видео {% endblock title %}
+
+{% block content %}
+    <h1>МЕГА КРУТЫЕ ВИДОСЫ - В ХОРОШЕМ КАЧЕСТВЕ</h1>
+    <div class="video-gallery">
+        {% for video in videos %}
+        <div class="gallery">
+            <div class="okno">
+                <!-- Добавляем ссылку для перехода на другую страницу -->
+                <a href="{% url 'video_page' video.id %}">
+                    <img src="{{ video.thumbnail.url }}" alt="{{ video.title }}" class="btn_video">
+                    <div>{{ video.title }}</div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
